@@ -1,0 +1,51 @@
+{% extends 'front/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Doa</h1>
+        </div>
+    </div>
+     <table class="table">
+    <thead class="bg-primary">
+      <tr>
+        <th scope="col" style="color:white;"><b>id</b></th>
+        <th scope="col" style="color:white;"><b>doa</b></th>
+        <th scope="col" style="color:white;"><b>ayat</b></th>
+        <th scope="col" style="color:white;"><b>latin</b></th>
+        <th scope="col" style="color:white;"><b>artinya</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in response %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.doa}}</td>
+        <td>{{i.ayat}}</td>
+        <td>{{i.latin}}</td>
+        <td>{{i.artinya}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    <!-- Offer Start -->
+    <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
+        <div class="container py-5">
+            <h1 class="display-3 text-primary mt-3">DOA</h1>
+            <h1 class="text-white mb-3">YOK MARI BERHAFALAN DOA DI WEBSITE KAMI</h1>
+            <h4 class="text-white font-weight-normal mb-4 pb-3">Setiap Hari dan Kapanpun kalian ingin berhafalan Website kami selalu ada untuk kalian</h4>
+            <form class="form-inline justify-content-center mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control p-4" placeholder="Your Email" style="height: 60px;">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary font-weight-bold px-4" type="submit">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Offer End -->
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <form class="form-horizontal" method="POST">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                {{title}}
+                            </h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"><b style="color:black;">Judul</label>
+                                <div class="col-md-9">
+                                    <input name="judul" type="text" placeholder="Nama" class="form-control" value="{{info.judul}}">
+                                </div>
+                        </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"><b style="color:black;">Body</label>
+                                <div class="col-md-9">
+                                    <textarea name="body" id="" cols="30" rows="10" class="form-control">{{info.body}}</textarea>
+                                </div>
+                        </div>
+                        </div>
+
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class=col-md-3></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class-"btn btn-fill btn-info">
+                                        Submit 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock content%}
