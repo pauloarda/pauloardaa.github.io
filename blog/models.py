@@ -24,4 +24,18 @@ class Info(models.Model):
     class Meta:
         ordering = ['-date']
         verbose_name_plural = "Info"
+
+class Doa(models.Model):
+    nomor = models.CharField(max_length=255, blank=True, null=True)
+    doa = models.CharField(max_length=255)
+    ayat = models.TextField()
+    latin = models.CharField(max_length=255)
+    artinya = models.CharField(max_length=255)
+
+    def __str__(self):
+        return "{} - {}".format(self.id, self.doa)
+
+    class Meta:
+        #ordering = ['-date']
+        verbose_name_plural = "Doa"
     

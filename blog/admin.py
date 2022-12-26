@@ -6,4 +6,5 @@ class InfoAdmin(admin.ModelAdmin):
     list_display = ('nama','judul','body','kategory','date')
 
 admin.site.register(Kategori)
+admin.site.register(Doa)
 admin.site.register(Info, InfoAdmin)

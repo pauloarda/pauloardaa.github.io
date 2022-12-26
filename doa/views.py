@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from blog.models import Info
+from blog.models import Info, Doa
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout
@@ -24,7 +24,13 @@ def about(request):
 
 def doa(request):
     template_name = 'front/doa.html'
-    response=requests.get('https://doa-doa-api-ahmadramadhan.fly.dev/api').json()
+    # response=requests.get('https://doa-doa-api-ahmadramadhan.fly.dev/api').json()
+    # for i in response:
+    #     if Doa.objects.filter(doa=i['doa']).exists() == False:
+    #         Doa.objects.create(doa=i['doa'],ayat=i['ayat'],latin=i['latin'],artinya=i['artinya'])
+    #     else:
+    #         Doa.objects.filter(doa=i['doa']).update(doa=i['doa'],ayat=i['ayat'],latin=i['latin'],artinya=i['artinya'])
+    response = Doa.objects.all()
     context = {
         'title':'halaman doa',
         'response':response
